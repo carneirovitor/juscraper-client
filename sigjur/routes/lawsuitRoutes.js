@@ -7,8 +7,8 @@ const LawsuitScraper = require('../lawsuits/jbscraper')
 module.exports = async (app) => {
   
   app.get('/*', function(req, res) {
-    res.sendFile('path to index.html');
-})  
+    res.sendFile('../client/src/index.js');
+})
 
   app.get(`/api/lawsuit`, async (req, res) => {
     //let lawsuits = await Lawsuit.find();
