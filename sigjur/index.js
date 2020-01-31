@@ -6,18 +6,18 @@ const path = require('path');
 require('./models/Lawsuits');
 
 const app = express();
-app.use(express.static(__dirname + '/client/src/lawsuit-search'));
+app.use(express.static(__dirname + '/client/build'));
 app.use(bodyParser.json());
 
 //IMPORT ROUTES
 require('./routes/lawsuitRoutes')(app);
 
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(__dirname + '/client/src/lawsuit-search'));
+  app.use(express.static('client/build'));
 
-
+  const path = require('path');
   app.get('*', (req,res) => {
-      res.sendFile(path.resolve(__dirname, 'client', 'src','lawsuit-search', 'LawsuitSearch.js'))
+      res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
   })
 
 }
