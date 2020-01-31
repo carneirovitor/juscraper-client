@@ -13,7 +13,7 @@ require('./routes/lawsuitRoutes')(app);
 
 if (process.env.NODE_ENV === 'production') {
   console.log(path.join(__dirname, 'client/build'))
-  app.use(express.static('client/build'));
+  app.use(express.static('client'));
 
 }
 
