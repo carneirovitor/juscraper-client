@@ -6,7 +6,7 @@ const path = require('path');
 require('./models/Lawsuits');
 
 const app = express();
-
+app.use(express.static(__dirname + '/client/src'));
 app.use(bodyParser.json());
 
 //IMPORT ROUTES
