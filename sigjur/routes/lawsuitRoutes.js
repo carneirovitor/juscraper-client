@@ -6,7 +6,7 @@ const path = require('path');
 
 module.exports = async (app) => {
   
-  app.get('/*', function(req, res) {
+  app.get('/*', timeout: 10000, function(req, res) {
     var appDir = path.dirname(require.main.filename);
     res.sendFile(path.join(appDir) + 'client','src','index.js');
 })
