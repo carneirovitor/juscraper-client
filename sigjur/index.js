@@ -32,7 +32,7 @@ app.use(bodyParser.json());
 require('./routes/lawsuitRoutes')(app);
 
 if (process.env.NODE_ENV === 'production') {
-  //app.use(express.static('client/src'));
+  //app.use(express.static(path.resolve(__dirname, 'client', 'src')));
 
   const path = require('path');
   app.get('*', (req,res) => {
