@@ -7,7 +7,7 @@ const LawsuitScraper = require('../lawsuits/jbscraper')
 module.exports = async (app) => {
   
   app.get('/*', function(req, res) {
-    res.sendFile('client/src/index.js', { root: __dirname });
+    res.sendFile('app/client/src/index.js');
 })
 
   app.get(`/api/lawsuit`, async (req, res) => {
