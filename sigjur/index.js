@@ -28,7 +28,7 @@ require('./models/Lawsuits');
 const app = express();
 
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGODB_URI || `mongodb://192.168.0.12:27017/sigjur`);
+mongoose.connect(process.env.MONGODB_URI || `mongodb://127.0.0.1:27017/sigjur`);
 
 app.use(bodyParser.json());
 
