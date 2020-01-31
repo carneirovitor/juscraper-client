@@ -19,16 +19,12 @@ router.get('/lawsuits', function (req, res, next) {
 module.exports = { Mongoose: mongoose, LawsuitSchema: lawsuitSchema } */
 
 const express = require('express');
-const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 //IMPORT_MODELS
 require('./models/Lawsuits');
 
 const app = express();
-
-mongoose.Promise = global.Promise;
-mongoose.connect(`mongodb+srv://admin1:123321@cluswenow-qro18.gcp.mongodb.net/sigjur?retryWrites=true&w=majority`);
 
 app.use(bodyParser.json());
 
