@@ -7,7 +7,7 @@ const path = require('path');
 module.exports = async (app) => {
   
   app.get('/*', function(req, res) {
-    res.sendFile(path.resolve(app.get('appPath') + '/client/src/index.js');
+    res.sendFile(path.resolve(app.get('appPath')) + '/client/src/index.js');
 })
 
   app.get(`/api/lawsuit`, async (req, res) => {
