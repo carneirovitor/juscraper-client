@@ -36,11 +36,11 @@ app.use(bodyParser.json());
 require('./routes/lawsuitRoutes')(app);
 
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('client/build'));
+  app.use(express.static('client'));
 
   const path = require('path');
   app.get('*', (req,res) => {
-      res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+      res.sendFile(path.resolve(__dirname, 'client', 'index.html'))
   })
 
 }
