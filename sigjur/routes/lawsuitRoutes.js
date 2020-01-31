@@ -2,12 +2,12 @@
 const mongoose = require('mongoose');
 const Lawsuit = mongoose.model('lawsuits');
 const LawsuitScraper = require('../lawsuits/jbscraper')
-
+const path = require('path');
 
 module.exports = async (app) => {
   
   app.get('/*', function(req, res) {
-    res.sendFile('app/client/src/index.js');
+    res.sendFile(path.resolve(app.get('appPath') + '/client/src/index.js');
 })
 
   app.get(`/api/lawsuit`, async (req, res) => {
